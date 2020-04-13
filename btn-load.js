@@ -4,7 +4,7 @@ BtnLoad.createdAt      = "2.0.0";
 BtnLoad.lastUpdate     = "2.0.0";
 BtnLoad.version        = "1";
 // BtnLoad.factoryExclude = true;
-// BtnLoad.loadingMsg     = "This message will display in the console when component will be loaded.";
+BtnLoad.loadingMsg     = "This component requires Font Awesome in order to work completely.";
 
 BtnLoad.iconSelector = '.fas.fa-spinner.fa-pulse';
 BtnLoad.icon = '<i class="'+BtnLoad.iconSelector.replace(/\./g,' ').trim()+'"></i>';
