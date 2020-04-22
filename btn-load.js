@@ -1,5 +1,5 @@
-var BtnLoad = module.exports = function(app){
-  BtnLoad = Object.getPrototypeOf(app).BtnLoad = new app.Component("btn-load");
+module.exports = function(app){
+  var BtnLoad = Object.getPrototypeOf(app).BtnLoad = new app.Component("btn-load");
   // BtnLoad.debug = true;
   BtnLoad.createdAt      = "2.0.0";
   BtnLoad.lastUpdate     = "2.0.0";
