@@ -5,7 +5,7 @@ module.exports = function(app){
   BtnLoad.lastUpdate     = "2.0.0";
   BtnLoad.version        = "1";
   // BtnLoad.factoryExclude = true;
-  BtnLoad.loadingMsg     = "This component requires Font Awesome in order to work completely.";
+  BtnLoad.loadingMsg     = (!app.useFA?'This component requires Font Awesome in order to work completely.':null);
 
   BtnLoad.iconSelector = '.fas.fa-spinner.fa-pulse';
   BtnLoad.icon = '<i class="'+BtnLoad.iconSelector.replace(/\./g,' ').trim()+'"></i>';
