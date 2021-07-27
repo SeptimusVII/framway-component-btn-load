@@ -17,7 +17,7 @@ module.exports = function(app){
     btn.$clone.find('i,svg').remove();
 
     btn.process = window[btn.getData('process')];
-    btn.icon = btn.getData('icon',true);
+    btn.icon = btn.getData('icon',false);
     btn.result = btn.getData('result',true);
     btn.reset = btn.getData('reset',true);
     btn.textIdle = btn.$el.html();
@@ -53,13 +53,13 @@ module.exports = function(app){
     switch(state){
       case 'idle':
         if(btn.result)
-          btn.$el.html(btn.$clone.html() + '<i class="fas fa-check ft-green"></i>');
+          btn.$el.html(btn.$clone.html() + '<i class="fas fa-check ft-success"></i>');
         else
           btn.$el.html(btn.textIdle);
       break;
       case 'failed':
         if(btn.result)
-          btn.$el.html(btn.$clone.html() + '<i class="fas fa-exclamation-triangle ft-orange" title="An error occured. Please retry or reload the page."></i>');
+          btn.$el.html(btn.$clone.html() + '<i class="fas fa-exclamation-triangle ft-error" title="An error occured. Please retry or reload the page."></i>');
         else
           btn.$el.html(btn.textIdle);
       break;
