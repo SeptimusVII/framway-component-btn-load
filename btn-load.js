@@ -2,11 +2,12 @@ module.exports = function(app){
   var BtnLoad = Object.getPrototypeOf(app).BtnLoad = new app.Component("btn-load");
   // BtnLoad.debug = true;
   BtnLoad.createdAt      = "2.0.0";
-  BtnLoad.lastUpdate     = "2.0.0";
-  BtnLoad.version        = "1";
+  BtnLoad.lastUpdate     = "2.4.5";
+  BtnLoad.version        = "1.1.0";
   // BtnLoad.factoryExclude = true;
-  BtnLoad.loadingMsg     = (!app.useFA?'This component requires Font Awesome in order to work completely.':null);
+  BtnLoad.loadingMsg     = "";
 
+  BtnLoad.iconLibrary = 'FontAwesome';
   BtnLoad.iconSelector = '.fas.fa-spinner.fa-pulse';
   BtnLoad.icon = '<i class="'+BtnLoad.iconSelector.replace(/\./g,' ').trim()+'"></i>';
 
@@ -22,7 +23,7 @@ module.exports = function(app){
     btn.reset = btn.getData('reset',true);
     btn.textIdle = btn.$el.html();
     btn.textLoading = btn.getData('text', btn.$el.html());
-    if(btn.icon)
+    if(btn.icon && window[BtnLoad.iconLibrary] != undefined)
       btn.textLoading = btn.textLoading + BtnLoad.icon;
 
     var btnClick = function btnClick(){
@@ -52,13 +53,13 @@ module.exports = function(app){
     var btn = this;
     switch(state){
       case 'idle':
-        if(btn.result)
+        if(btn.result && window[BtnLoad.iconLibrary] != undefined)
           btn.$el.html(btn.$clone.html() + '<i class="fas fa-check ft-success"></i>');
         else
           btn.$el.html(btn.textIdle);
       break;
       case 'failed':
-        if(btn.result)
+        if(btn.result && window[BtnLoad.iconLibrary] != undefined)
           btn.$el.html(btn.$clone.html() + '<i class="fas fa-exclamation-triangle ft-error" title="An error occured. Please retry or reload the page."></i>');
         else
           btn.$el.html(btn.textIdle);
