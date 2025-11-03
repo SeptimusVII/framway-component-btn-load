@@ -2,8 +2,8 @@ module.exports = function(app){
   var BtnLoad = Object.getPrototypeOf(app).BtnLoad = new app.Component("btn-load");
   // BtnLoad.debug = true;
   BtnLoad.createdAt      = "2.0.0";
-  BtnLoad.lastUpdate     = "2.4.5";
-  BtnLoad.version        = "1.1.0";
+  BtnLoad.lastUpdate     = "2.7.0";
+  BtnLoad.version        = "1.2.0";
   // BtnLoad.factoryExclude = true;
   BtnLoad.loadingMsg     = "";
 
