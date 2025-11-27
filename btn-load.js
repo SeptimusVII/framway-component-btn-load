@@ -3,7 +3,7 @@ module.exports = function(app){
   // BtnLoad.debug = true;
   BtnLoad.createdAt      = "2.0.0";
   BtnLoad.lastUpdate     = "2.7.0";
-  BtnLoad.version        = "1.2.0";
+  BtnLoad.version        = "1.2.1";
   // BtnLoad.factoryExclude = true;
   BtnLoad.loadingMsg     = "";
 

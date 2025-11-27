@@ -1,7 +1,8 @@
 .btn-load{
-	&:not(.no-btn){
-		@extend %btn !optional; 
+	// &:not(.no-btn){
+		// @extend %btn !optional; 
+		// @include btn();
 	 	&:not([class*=icon-]){@extend .icon-last !optional;}
-	}
+	// }
 	position: relative;
 }
